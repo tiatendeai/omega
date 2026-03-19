@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "omega/protocol/session/session-schema.json",
+  "title": "OMEGA Session Atomic Schema",
+  "description": "Schema para sessoes atomicas do protocolo JARVIS OMEGA",
+  "type": "object",
+  "required": [
+    "session_id",
+    "status",
+    "created_at",
+    "lifecycle_stage",
+    "agents_involved",
+    "tasks"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "pattern": "^OMEGA-[0-9]{8}-[0-9]{6}-[a-f0-9]{8}-[a-z]+-\\d{3}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "paused", "completed", "failed", "archived"]
+    },
+    "lifecycle_stage": {
+      "type": "string",
+      "enum": [
+        "GENESIS", "DIAGNOSIS", "ORCHESTRATION",
+        "EXECUTION", "VALIDATION", "DEPLOY",
+        "VERIFICATION", "CLOSURE"
+      ]
+    },
+    "agents_involved": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Maestro", "Dev", "Deploy", "QA", "Security", "Docs", "Status"]
+      }
+    },
+    "tasks": { "type": "array" },
+    "deliverables": { "type": "array" },
+    "validated_in_production": { "type": "boolean", "default": false },
+    "metadata": { "type": "object" }
+  }
+}
