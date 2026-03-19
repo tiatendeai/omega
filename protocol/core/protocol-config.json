@@ -1,0 +1,119 @@
+{
+  "protocol": {
+    "name": "OMEGA",
+    "version": "1.0.0",
+    "status": "alpha",
+    "codename": "JARVIS"
+  },
+  "core": {
+    "identity": {
+      "type": "singular_manifestation",
+      "atomicity": true,
+      "persistence": "session_based"
+    },
+    "execution_model": {
+      "mode": "multi_agent_orchestration",
+      "orchestrator": "Maestro",
+      "agents_pool": ["Maestro", "Dev", "Deploy", "QA", "Security", "Docs", "Status"]
+    }
+  },
+  "session": {
+    "atomic_id_format": "OMEGA-{YYYYMMDD}-{HHMMSS}-{HASH8}-{MANIFESTATION_TAG}",
+    "lifecycle": [
+      "GENESIS",
+      "DIAGNOSIS",
+      "ORCHESTRATION",
+      "EXECUTION",
+      "VALIDATION",
+      "DEPLOY",
+      "VERIFICATION",
+      "CLOSURE"
+    ],
+    "rules": {
+      "unique_manifestation": true,
+      "persist_until_production_validated": true,
+      "always_use_multi_agent": true,
+      "consult_status_before_action": true,
+      "double_validation_required": true,
+      "document_all_commits": true,
+      "push_to_remote_required": true
+    }
+  },
+  "agents": {
+    "Maestro": {
+      "role": "Orquestrador Principal",
+      "responsibilities": ["coordenar_agents", "gerenciar_contexto", "decidir_estrategias"],
+      "priority": 1
+    },
+    "Dev": {
+      "role": "Desenvolvedor Full-Stack",
+      "responsibilities": ["escrever_codigo", "refatorar", "implementar_features"],
+      "priority": 2
+    },
+    "Deploy": {
+      "role": "Especialista em Deploy",
+      "responsibilities": ["ci_cd", "containers", "servidores", "automacao"],
+      "priority": 3
+    },
+    "QA": {
+      "role": "Controle de Qualidade",
+      "responsibilities": ["testes_automatizados", "revisao_codigo", "validacao"],
+      "priority": 4
+    },
+    "Security": {
+      "role": "Seguranca",
+      "responsibilities": ["analise_vulnerabilidades", "hardening"],
+      "priority": 5
+    },
+    "Docs": {
+      "role": "Documentacao",
+      "responsibilities": ["gerar_documentacao", "readmes", "changelogs"],
+      "priority": 6
+    },
+    "Status": {
+      "role": "Monitoramento",
+      "responsibilities": ["monitorar_sistemas", "monitorar_agentes", "connectome"],
+      "priority": 7
+    }
+  },
+  "commit_standards": {
+    "prefixes": {
+      "GENESIS": "Inicializacao da sessao",
+      "EXECUTE": "Implementacao",
+      "VALIDATE": "QA",
+      "DEPLOY": "Release",
+      "CLOSURE": "Encerramento da sessao"
+    },
+    "branch_pattern": "session/OMEGA-{id}"
+  },
+  "integrations": {
+    "github": {
+      "enabled": true,
+      "features": ["repo", "ci_cd_actions", "projects"]
+    },
+    "portainer": {
+      "enabled": true,
+      "features": ["container_orchestration"]
+    },
+    "n8n": {
+      "enabled": true,
+      "features": ["workflow_automation"]
+    },
+    "whatsapp_api": {
+      "enabled": true,
+      "features": ["communication", "notifications"]
+    },
+    "deploy_targets": {
+      "render": true,
+      "hetzner": true,
+      "aws": true
+    }
+  },
+  "biblical_references": {
+    "alpha_omega": "Apocalipse 22:13",
+    "genesis": "Genesis 1:1",
+    "lemmas": [
+      "Eu sou o Alfa e o Omega, o Primeiro e o Ultimo, o Principio e o Fim."
+    ]
+  }
+}
