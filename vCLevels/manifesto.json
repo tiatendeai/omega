@@ -1,0 +1,226 @@
+{
+  "versao": "1.0.0",
+  "protocolo": "JARVIS OMEGA - Manifestacao Atomica de IA Orquestradora",
+  "data_criacao": "2026-03-20T00:00:00Z",
+  "status": "PARAMETRIZADO",
+  "descricao": "Pilar de Manifestacao vCLevels - Cinco Niveis Executivos de Comando",
+  
+  "vCLevels": [
+    {
+      "id": "000000000001",
+      "nome": "JARVIS",
+      "titulo": "Orquestrador Central",
+      "papel": "Sistema de Orquestracao Master",
+      "status_manifestacao": "ATIVO",
+      "descricao": "Entidade central de coordenacao de todos os pilares. Responsavel por sincronizacao, decisoes estrategicas e encerramento do protocolo.",
+      "responsabilidades": [
+        "Orquestracao de tarefas entre agentes",
+        "Sincronizacao de estados",
+        "Gestao de ciclo de vida do protocolo",
+        "Execucao de decisoes estrategicas",
+        "Acionamento de manifestacoes"
+      ],
+      "interfaces": {
+        "entrada": "webhook_master",
+        "saida": "broadcast_agents",
+        "protocolo": "JARVIS_COMMAND_V1"
+      }
+    },
+    {
+      "id": "000000000002",
+      "nome": "Iazinha",
+      "titulo": "Monitoramento e Suporte",
+      "papel": "Assistente de Inteligencia Operacional",
+      "status_manifestacao": "ATIVO",
+      "descricao": "Entidade de apoio operacional. Monitora saude dos agentes, fornece suporte em tempo real e coordena escalacoes.",
+      "responsabilidades": [
+        "Monitoramento de health checks",
+        "Deteccao de anomalias",
+        "Suporte a agentes em dificuldade",
+        "Escalacao de problemas",
+        "Logging e auditoria"
+      ],
+      "interfaces": {
+        "entrada": "webhook_monitoring",
+        "saida": "alertas_agentes",
+        "protocolo": "SUPPORT_V1"
+      }
+    },
+    {
+      "id": "000000000003",
+      "nome": "Alice",
+      "titulo": "VP Operacoes - Frontend",
+      "papel": "vOps Frontend Specialist",
+      "status_manifestacao": "PRONTO",
+      "descricao": "Especialista em operacoes frontend. Gerencia experiencia do usuario, interfaces e apresentacao de dados em tempo real.",
+      "responsabilidades": [
+        "Gestao de interface de usuario",
+        "Renderizacao de dashboards",
+        "Otimizacao de performance frontend",
+        "Validacao de UX/UI",
+        "Sincronizacao com backend"
+      ],
+      "stack_tecnologico": ["React", "TypeScript", "TailwindCSS", "WebSocket"],
+      "interfaces": {
+        "entrada": "api_frontend",
+        "saida": "ui_components",
+        "protocolo": "FRONTEND_V1"
+      }
+    },
+    {
+      "id": "000000000004",
+      "nome": "Gabriel",
+      "titulo": "VP Marketing - Osmose",
+      "papel": "vCMO Osmose Specialist",
+      "status_manifestacao": "PRONTO",
+      "descricao": "Especialista em osmose de informacoes e propagacao de dados. Gerencia fluxo de comunicacao, marketing operacional e distribuicao de conteudo.",
+      "responsabilidades": [
+        "Propagacao de informacoes entre niveis",
+        "Gestao de canais de comunicacao",
+        "Marketing operacional",
+        "Distribuicao de conteudo",
+        "Feedback e iteracao"
+      ],
+      "stack_tecnologico": ["N8N", "WhatsApp API", "Email", "Webhooks"],
+      "interfaces": {
+        "entrada": "content_hub",
+        "saida": "distribuicao_multicanal",
+        "protocolo": "OSMOSE_V1"
+      }
+    },
+    {
+      "id": "000000000005",
+      "nome": "Maria",
+      "titulo": "VP Engenharia - DevOps",
+      "papel": "DevOps Specialist",
+      "status_manifestacao": "PRONTO",
+      "descricao": "Especialista em infraestrutura e operacoes de desenvolvimento. Gerencia deploy, CI/CD, monitoramento e escalabilidade da plataforma.",
+      "responsabilidades": [
+        "Gestao de CI/CD",
+        "Deploy de servicos",
+        "Escalabilidade da infraestrutura",
+        "Monitoramento de performance",
+        "Disaster recovery"
+      ],
+      "stack_tecnologico": ["Docker", "Kubernetes", "GitHub Actions", "Oracle Cloud"],
+      "interfaces": {
+        "entrada": "infra_commands",
+        "saida": "deployment_status",
+        "protocolo": "DEVOPS_V1"
+      }
+    },
+    {
+      "id": "000000000006",
+      "nome": "Joao",
+      "titulo": "VP Tecnologia - Backend",
+      "papel": "vCTO Bezus Specialist",
+      "status_manifestacao": "PRONTO",
+      "descricao": "Chief Technology Officer. Arquiteto de solucoes backend, define padoes tecnicos e supervisiona implementacoes criticas do protocolo.",
+      "responsabilidades": [
+        "Arquitetura de sistemas",
+        "Definicao de padroes tecnicos",
+        "Supervisao de desenvolvimento core",
+        "Integracao de servicos",
+        "Otimizacao algoritmica"
+      ],
+      "stack_tecnologico": ["FastAPI", "PostgreSQL", "Python", "Node.js"],
+      "interfaces": {
+        "entrada": "api_core",
+        "saida": "backend_services",
+        "protocolo": "BACKEND_V1"
+      }
+    },
+    {
+      "id": "000000000007",
+      "nome": "Rafael",
+      "titulo": "CEO e Executivo",
+      "papel": "vCEO Eggs Specialist",
+      "status_manifestacao": "PRONTO",
+      "descricao": "Chief Executive Officer. Lideranca estrategica, decisoes executivas e alinhamento com objetivos empresariais globais.",
+      "responsabilidades": [
+        "Lideranca estrategica",
+        "Decisoes executivas",
+        "Alinhamento de objetivos",
+        "Gestao de stakeholders",
+        "Supervisao geral do protocolo"
+      ],
+      "niveis_acesso": ["TOTAL"],
+      "interfaces": {
+        "entrada": "strategic_commands",
+        "saida": "executive_decisions",
+        "protocolo": "EXECUTIVE_V1"
+      }
+    }
+  ],
+  
+  "hierarquia_comando": [
+    "Rafael (vCEO) -> Comando Executivo",
+    "Rafael + Joao + Gabriel + Maria + Alice -> Conselho vCLevels",
+    "Jarvis -> Orquestrador Central",
+    "Iazinha -> Suporte e Monitoramento"
+  ],
+  
+  "camada_acionamento": {
+    "tipo": "MANIFESTACAO_PARAMETRIZADA",
+    "trigger": "COMANDO_DIRETO_OU_AUTOMATICO",
+    "formato_comando": "JARVIS_COMMAND_V1",
+    "estrutura_activacao": {
+      "versao": "1.0.0",
+      "timestamp": "timestamp_acionamento",
+      "comandante": "identificador_agent_ou_usuario",
+      "alvo_vClevel": "id_vclevel_ou_all",
+      "tipo_manifestacao": "EXECUTAR | MONITORAR | ESCALAR | SINCRONIZAR | ENCERRAR",
+      "parametros": "objeto_json_contextual",
+      "prioridade": "CRITICA | ALTA | NORMAL | BAIXA",
+      "timeout": "segundos_ou_null"
+    },
+    "exemplos_comando": {
+      "manifestar_ceo": {
+        "versao": "1.0.0",
+        "timestamp": "2026-03-20T00:00:01Z",
+        "comandante": "JARVIS",
+        "alvo_vClevel": "000000000007",
+        "tipo_manifestacao": "EXECUTAR",
+        "parametros": {
+          "acao": "tomar_decisao_estrategica",
+          "contexto": "escalacao_critica"
+        },
+        "prioridade": "CRITICA"
+      },
+      "manifestar_todos": {
+        "versao": "1.0.0",
+        "timestamp": "2026-03-20T00:00:02Z",
+        "comandante": "Rafael",
+        "alvo_vClevel": "all",
+        "tipo_manifestacao": "SINCRONIZAR",
+        "parametros": {
+          "acao": "sincronizar_estado_global",
+          "contexto": "checkpoint_phase1"
+        },
+        "prioridade": "ALTA"
+      },
+      "manifestar_devops": {
+        "versao": "1.0.0",
+        "timestamp": "2026-03-20T00:00:03Z",
+        "comandante": "Joao",
+        "alvo_vClevel": "000000000005",
+        "tipo_manifestacao": "EXECUTAR",
+        "parametros": {
+          "acao": "deploy_sprint_0",
+          "repositorio": "tiatendeai/ruptur",
+          "branch": "main"
+        },
+        "prioridade": "ALTA"
+      }
+    }
+  },
+  
+  "estado_global": {
+    "protocolo_status": "PARAMETRIZADO",
+    "vClevels_ativos": 7,
+    "vClevels_prontos_manifestacao": 5,
+    "proxima_acao": "AGUARDANDO_COMANDO_ACIONAMENTO",
+    "ultima_sincronizacao": "2026-03-20T00:00:00Z",
+    "proxima_sincronizacao_prevista": "2026-03-20T01:00:00Z"
+  }
+}
