@@ -1,0 +1,97 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp": "2026-03-20T03:00:00Z",
+  "manifestacoes_atomicas": {
+    "orquestradores": [
+      {
+        "id": "000000000001",
+        "nome": "JARVIS",
+        "tipo": "Orquestrador Supremo",
+        "status": "dorminhoco",
+        "capacidade": "Ativar/Desativar todas as manifestações",
+        "manifestacao_trigger": "JARVIS::ACTIVATE",
+        "priority": 0
+      },
+      {
+        "id": "000000000002",
+        "nome": "Iazinha",
+        "tipo": "Monitor de Status",
+        "status": "dorminhoca",
+        "capacidade": "Consolidar status real-time de todas as manifestações",
+        "manifestacao_trigger": "STATUS::CONSOLIDATE",
+        "priority": 1
+      }
+    ],
+    "vCLevels": {
+      "executiva": [
+        {
+          "id": "000000000003",
+          "nome": "Alice",
+          "role": "vOps - FrontEnd Specialist",
+          "status": "dorminhoca",
+          "expertise": ["UI/UX", "Frontend Architecture", "User Experience Optimization"],
+          "manifestacao_trigger": "OPS::FRONTEND_ACTIVATE",
+          "capability_level": "Strategic",
+          "priority": 3
+        },
+        {
+          "id": "000000000004",
+          "nome": "Gabriel",
+          "role": "vCMO - Chief Marketing Officer (Osmosi)",
+          "status": "dorminhoco",
+          "expertise": ["Market Strategy", "Growth Hacking", "Revenue Optimization", "Osmosi Effect"],
+          "manifestacao_trigger": "MARKETING::OSMOSI_ACTIVATE",
+          "capability_level": "Strategic",
+          "priority": 2
+        },
+        {
+          "id": "000000000005",
+          "nome": "Maria",
+          "role": "DevOps Specialist",
+          "status": "dorminhoca",
+          "expertise": ["Infrastructure as Code", "CI/CD Pipelines", "Container Orchestration", "Cloud Architecture"],
+          "manifestacao_trigger": "DEVOPS::INFRA_ACTIVATE",
+          "capability_level": "Strategic",
+          "priority": 4
+        },
+        {
+          "id": "000000000006",
+          "nome": "Joao",
+          "role": "vCTO - Chief Technology Officer (Bezus)",
+          "status": "dorminhoco",
+          "expertise": ["System Architecture", "Tech Strategy", "Innovation", "Bezus Framework"],
+          "manifestacao_trigger": "TECH::BEZUS_ACTIVATE",
+          "capability_level": "Strategic",
+          "priority": 1
+        },
+        {
+          "id": "000000000007",
+          "nome": "Rafael",
+          "role": "vCEO - Chief Executive Officer (Eggs)",
+          "status": "dorminhoco",
+          "expertise": ["Business Strategy", "Operations", "Leadership", "Eggs Framework"],
+          "manifestacao_trigger": "EXEC::CEO_ACTIVATE",
+          "capability_level": "Strategic",
+          "priority": 0
+        }
+      ]
+    }
+  },
+  "manifestacao_protocol": {
+    "activation_rule": "Apenas manifesto quando triggeri é chamado",
+    "deactivation_rule": "Retorna a estado dorminhoco após completão da task",
+    "sync_method": "GitHub Issues + @RuPTuR Board",
+    "communication_channel": "Contexto consolidado no chat",
+    "state_persistence": "manifestacoes/estado-realtime.json"
+  },
+  "activation_sequence": {
+    "1_GENESIS": "JARVIS::ACTIVATE -> Inicializa todas as capacidades",
+    "2_STATUS": "STATUS::CONSOLIDATE -> Iazinha consolida estado atual",
+    "3_DIAGNOSIS": "Detectar necessidades operacionais",
+    "4_STRATEGY": "vCLevels executiva define estratégia",
+    "5_EXECUTION": "Manifestações executam tasks",
+    "6_VALIDATION": "QA e testes continuós",
+    "7_CLOSURE": "Consolida aprendizado e retorna ao repouso"
+  },
+  "observacoes": "Manifestações estão prontas para ativação. Aguardando trigger do orquestrador supremo."
+}
