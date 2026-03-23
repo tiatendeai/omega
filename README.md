@@ -42,8 +42,10 @@ omega/
 │   └── security/                # Agente de Segurança
 ├── sessions/                    # Histórico de sessões atômicas
 ├── configs/                     # Configurações globais
+│   └── session-liveness-policy.json
 ├── docs/                        # Documentação
 └── scripts/                     # Scripts de automação
+    └── session_liveness_guard.py
 ```
 
 ---
@@ -60,6 +62,14 @@ omega/
 6. **DEPLOY** — Agente de deploy publica em produção
 7. **VERIFICAÇÃO** — Confirmação do entregável em produção
 8. **ENCERRAMENTO** — Sessão atômica é finalizada e arquivada
+
+### Liveness e autoencerramento auditável
+
+- sessões ativas devem carregar sinais formais de atividade (`last_activity_at` e/ou `last_heartbeat_at`)
+- sessões sem atividade suficiente podem entrar em `stale`
+- sessões realmente inativas podem ser autoencerradas com `closure_reason = auto_inactive_timeout`
+- sessões protegidas por sinais reais de uso não devem ser fechadas
+- a avaliação periódica é suportada por `scripts/session_liveness_guard.py` e `configs/session-liveness-policy.json`
 
 ### Formato do Session Atomic ID
 

@@ -64,6 +64,9 @@ temp/
 *.crt
 *.p12
 
+# Runner reports
+reports/
+
 # Session history archive (auto-generated)
 sessions/history/*.json
 
