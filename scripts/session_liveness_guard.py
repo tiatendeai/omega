@@ -118,6 +118,7 @@ def main() -> int:
     parser.add_argument('--sessions-dir', default='sessions')
     parser.add_argument('--policy', default='configs/session-liveness-policy.json')
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--report-path', default='reports/liveness-report.json')
     args = parser.parse_args()
 
     sessions_dir = Path(args.sessions_dir)
@@ -146,6 +147,9 @@ def main() -> int:
         'report': report,
     }
     print(json.dumps(output, ensure_ascii=False, indent=2))
+    report_path = Path(args.report_path)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n')
     return 0
 
 
