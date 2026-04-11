@@ -175,3 +175,7 @@ Para contribuir com o protocolo OMEGA:
 ---
 
 > "Eu sou o Alfa e o Ômega, o Primeiro e o Último, o Princípio e o Fim." — Apocalipse 22:13
+
+## Liveness guard e gate manual
+
+O `session_liveness_guard.py` pode marcar sessões como `stale`, mas o passo `stale -> closed` continua exigindo revisão manual explícita para evitar falso positivo em sessão viva.

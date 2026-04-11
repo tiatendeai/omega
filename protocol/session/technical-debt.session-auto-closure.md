@@ -141,3 +141,6 @@ Em resumo:
 - sessão inativa de verdade -> deve poder ser encerrada automaticamente
 - sessão ainda em uso -> não deve ser encerrada
 
+## Situação de 2026-03-23
+
+A base material de liveness já existe (`last_activity_at`, `last_heartbeat_at`, script e policy), mas o fechamento por inatividade permanece protegido por gate manual antes do `closed` definitivo.

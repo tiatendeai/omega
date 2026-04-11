@@ -15,5 +15,9 @@ jobs:
       - name: Executar script de avaliação de liveness (report_only)
         run: |
           python scripts/session_liveness_guard.py --sessions-dir sessions --policy configs/session-liveness-policy.json --report-path reports/liveness-report-$(date -u +"%Y%m%dT%H%M%SZ").json
-      - name: Upload do relatório (não persiste artefato)
-        run: ls reports/liveness-report-*.json
+      - name: Publicar relatório como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: session-liveness-report-${{ github.run_id }}
+          path: reports/liveness-report-*.json
+          if-no-files-found: error

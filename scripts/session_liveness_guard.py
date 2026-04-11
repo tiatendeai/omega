@@ -93,7 +93,7 @@ def classify(session: dict[str, Any], policy: dict[str, Any], now: datetime) -> 
 
 
 def apply_decision(session: dict[str, Any], decision: dict[str, Any], policy: dict[str, Any], now: datetime) -> bool:
-    changed = False
+    changed = True
     meta = session.setdefault('metadata', {})
     liveness = meta.setdefault('liveness', {})
     liveness['last_checked_at'] = now.isoformat()
@@ -118,12 +118,14 @@ def main() -> int:
     parser.add_argument('--sessions-dir', default='sessions')
     parser.add_argument('--policy', default='configs/session-liveness-policy.json')
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--allow-session-id', action='append', default=[])
     parser.add_argument('--report-path', default='reports/liveness-report.json')
     args = parser.parse_args()
 
     sessions_dir = Path(args.sessions_dir)
     policy_path = Path(args.policy)
     policy = json.loads(policy_path.read_text())['policy']
+    allowed_session_ids = set(args.allow_session_id or [])
     now = datetime.now(timezone.utc)
     report: list[dict[str, Any]] = []
     changed_files: list[str] = []
@@ -131,6 +133,8 @@ def main() -> int:
     for path in sorted(sessions_dir.glob('*.json')):
         session = json.loads(path.read_text())
         decision = classify(session, policy, now)
+        if args.apply and decision['decision'] == 'auto_close_candidate' and policy.get('auto_close_requires_manual_review', False) and session.get('session_id') not in allowed_session_ids:
+            decision = {**decision, 'decision': 'manual_review_required', 'reason': 'manual_gate_required_before_close'}
         if args.apply:
             changed = apply_decision(session, decision, policy, now)
             if changed:

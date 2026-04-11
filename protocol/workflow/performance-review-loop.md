@@ -48,3 +48,14 @@ Ela deve ficar como:
 ## Resultado esperado
 
 A sessão não depende mais de memória manual para ativar performance, e também não fica presa a um baseline rígido que nunca é reavaliado.
+
+## Integração com intake e trace grading
+
+Quando uma revisão de performance consolidar diretriz durável, o fechamento da sessão deve apontar para:
+
+- `state/playbooks/jarvis.intake-gate.md`
+- `state/knowledge/trace-grading.md`
+- `state/templates/jarvis.trace-card.md`
+
+Se a evidência ainda estiver incompleta, o resultado correto é manter o item como débito, retenção local ou revisão pendente.
+

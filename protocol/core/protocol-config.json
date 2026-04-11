@@ -59,8 +59,21 @@
       "requires_protection_check": true,
       "closure_reason": "auto_inactive_timeout",
       "policy_ref": "configs/session-liveness-policy.json",
-      "script_ref": "scripts/session_liveness_guard.py"
-    }
+      "script_ref": "scripts/session_liveness_guard.py",
+      "manual_review_required_for_close": true,
+      "apply_requires_allow_session_ids": true
+    },
+    "status_model": [
+      "active",
+      "paused",
+      "suspenso",
+      "handoff_pendente",
+      "completed",
+      "failed",
+      "archived",
+      "stale",
+      "closed"
+    ]
   },
   "agents": {
     "Maestro": {
