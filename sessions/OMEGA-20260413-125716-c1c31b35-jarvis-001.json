@@ -1,0 +1,128 @@
+{
+  "session_id": "OMEGA-20260413-125716-c1c31b35-jarvis-001",
+  "status": "handoff_pendente",
+  "created_at": "2026-04-13T12:57:16.059758-03:00",
+  "lifecycle_stage": "CLOSURE",
+  "agents_involved": [
+    "Maestro",
+    "Dev",
+    "Deploy",
+    "QA",
+    "Docs",
+    "Status"
+  ],
+  "tasks": [
+    {
+      "id": "FORMAT-RECOVERY-001",
+      "title": "Materializar governança, inventário e recovery para formatação segura",
+      "status": "done",
+      "operational_state": "capitalizacao_concluida"
+    },
+    {
+      "id": "FORMAT-RECOVERY-002",
+      "title": "Registrar handoff em OMEGA e memória rastreável para continuidade no Jarvis",
+      "status": "done",
+      "operational_state": "handoff_materializado"
+    },
+    {
+      "id": "FORMAT-RECOVERY-003",
+      "title": "Gerar backup criptografado off-git do sensível e dos artefatos sem remote",
+      "status": "pending",
+      "operational_state": "aguardando_execucao_no_jarvis"
+    },
+    {
+      "id": "FORMAT-RECOVERY-004",
+      "title": "Validar restore mínimo, relogins críticos e aceite final de máquina pronta para formatar",
+      "status": "pending",
+      "operational_state": "aguardando_backup_e_religamento"
+    }
+  ],
+  "deliverables": [
+    {
+      "type": "omega_session_artifact",
+      "path": "../../omega/sessions/OMEGA-20260413-125716-c1c31b35-jarvis-001.json",
+      "status": "materializado"
+    },
+    {
+      "type": "omega_handoff_note",
+      "path": "../../omega/sessions/HANDOFF.OMEGA-20260413-125716-c1c31b35-jarvis-001.md",
+      "status": "materializado"
+    },
+    {
+      "type": "state_trace_reference",
+      "path": "../../state/knowledge/traces/trace-OMEGA-20260413-125716-c1c31b35-jarvis-001.md",
+      "status": "materializado"
+    },
+    {
+      "type": "infra_recovery_manifests",
+      "path": "../../infrastructure-state/recovery/",
+      "status": "referenciado"
+    },
+    {
+      "type": "jarvis_recovery_entrypoint",
+      "path": "../../J.A.R.V.I.S./RECOVERY.md",
+      "status": "referenciado"
+    }
+  ],
+  "validated_in_production": false,
+  "metadata": {
+    "operator": "diego",
+    "entity_id": "entity:jarvis",
+    "uid": "jarvis-root-001",
+    "manifestation_id": "jarvis.ruptur.control_plane",
+    "surface": "Codex CLI local em /Users/diego/dev",
+    "handoff_target": "Jarvis em outro CLI",
+    "omega_branch": "chore/omega-session-lifecycle-performance-2026-03-23",
+    "canonization": "regra local provisória de session_id conforme omega/protocol/session/session-id-rule.md",
+    "current_focus": {
+      "context": "formatacao_segura_com_recovery_testavel",
+      "objective": "nao deixar recovery depender de historico bruto local e concluir backup+restore antes da formatacao",
+      "next_micro_victory": "gerar bundle criptografado off-git e validar religamento minimo do control plane"
+    },
+    "published_changes": {
+      "infrastructure_state": [
+        "78754a7",
+        "73c1ef8"
+      ],
+      "jarvis": [
+        "60700f6"
+      ],
+      "state": [
+        "56a29923"
+      ],
+      "2dl_automated_tech_farm_and_cash_factory_co": [
+        "d991ab0"
+      ],
+      "lab_ruptur_revenue_engine_os_ai": [
+        "62200f7"
+      ]
+    },
+    "repo_sync": {
+      "infrastructure-state": "sincronizado com remote",
+      "J.A.R.V.I.S.": "sincronizado com remote",
+      "state": "sincronizado com remote",
+      "2dl-automated-tech-farm-and-cash-factory-co": "sincronizado com remote",
+      "lab/ruptur-revenue-engine-os-ai": "sincronizado com remote"
+    },
+    "pending_sensitive_backup": [
+      "~/.ssh",
+      "~/.codex",
+      ".env*",
+      "configs locais críticas",
+      "/Users/diego/dev/adk",
+      "/Users/diego/dev/GitHub/brute-ai-agent-histories",
+      "/Users/diego/dev/prompts (opcional)",
+      "/Users/diego/dev/prompts/SMSProject (opcional)"
+    ],
+    "evidence_refs": [
+      "../../infrastructure-state/recovery/dev_inventory.yaml",
+      "../../infrastructure-state/recovery/recovery_matrix.yaml",
+      "../../infrastructure-state/recovery/local_backup_manifest.yaml",
+      "../../infrastructure-state/recovery/format-recovery-playbook.md",
+      "../../state/knowledge/2026-04-13-machine-format-recovery-governance.md",
+      "../../J.A.R.V.I.S./RECOVERY.md"
+    ]
+  },
+  "last_activity_at": "2026-04-13T12:57:16.059758-03:00",
+  "last_heartbeat_at": "2026-04-13T12:57:16.059758-03:00"
+}
