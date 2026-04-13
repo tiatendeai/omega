@@ -19,26 +19,84 @@
     },
     "status": {
       "type": "string",
-      "enum": ["active", "paused", "completed", "failed", "archived"]
+      "enum": [
+        "active",
+        "paused",
+        "completed",
+        "failed",
+        "archived",
+        "stale",
+        "closed",
+        "suspenso",
+        "handoff_pendente"
+      ]
     },
     "lifecycle_stage": {
       "type": "string",
       "enum": [
-        "GENESIS", "DIAGNOSIS", "ORCHESTRATION",
-        "EXECUTION", "VALIDATION", "DEPLOY",
-        "VERIFICATION", "CLOSURE"
+        "GENESIS",
+        "DIAGNOSIS",
+        "ORCHESTRATION",
+        "EXECUTION",
+        "VALIDATION",
+        "DEPLOY",
+        "VERIFICATION",
+        "CLOSURE"
       ]
     },
     "agents_involved": {
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["Maestro", "Dev", "Deploy", "QA", "Security", "Docs", "Status"]
+        "enum": [
+          "Maestro",
+          "Dev",
+          "Deploy",
+          "QA",
+          "Security",
+          "Docs",
+          "Status"
+        ]
       }
     },
-    "tasks": { "type": "array" },
-    "deliverables": { "type": "array" },
-    "validated_in_production": { "type": "boolean", "default": false },
-    "metadata": { "type": "object" }
+    "tasks": {
+      "type": "array"
+    },
+    "deliverables": {
+      "type": "array"
+    },
+    "validated_in_production": {
+      "type": "boolean",
+      "default": false
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "last_activity_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_heartbeat_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stale_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "closed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "closure_reason": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "handoff_completed",
+        "failed",
+        "auto_inactive_timeout",
+        "archived_cleanup"
+      ]
+    }
   }
 }

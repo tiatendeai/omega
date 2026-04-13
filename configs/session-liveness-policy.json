@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "status": "alpha",
+  "policy": {
+    "heartbeat_field": "last_heartbeat_at",
+    "activity_field": "last_activity_at",
+    "stale_after_minutes": 180,
+    "auto_close_after_minutes": 1440,
+    "close_status": "closed",
+    "stale_status": "stale",
+    "require_protection_check": true,
+    "protection_signals": [
+      "connectome_active",
+      "task_in_progress",
+      "operator_lock_active",
+      "manual_protection"
+    ],
+    "closure_reason": "auto_inactive_timeout",
+    "default_apply_mode": "report_only",
+    "auto_close_requires_manual_review": true,
+    "manual_review_gate_status": "stale",
+    "apply_requires_allow_session_ids": true
+  }
+}

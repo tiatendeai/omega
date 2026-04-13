@@ -14,7 +14,15 @@
     "execution_model": {
       "mode": "multi_agent_orchestration",
       "orchestrator": "Maestro",
-      "agents_pool": ["Maestro", "Dev", "Deploy", "QA", "Security", "Docs", "Status"]
+      "agents_pool": [
+        "Maestro",
+        "Dev",
+        "Deploy",
+        "QA",
+        "Security",
+        "Docs",
+        "Status"
+      ]
     }
   },
   "session": {
@@ -37,42 +45,98 @@
       "double_validation_required": true,
       "document_all_commits": true,
       "push_to_remote_required": true
-    }
+    },
+    "liveness": {
+      "heartbeat_field": "last_heartbeat_at",
+      "activity_field": "last_activity_at",
+      "stale_after_minutes": 180,
+      "auto_close_after_minutes": 1440,
+      "status_candidates": [
+        "active",
+        "stale",
+        "closed"
+      ],
+      "requires_protection_check": true,
+      "closure_reason": "auto_inactive_timeout",
+      "policy_ref": "configs/session-liveness-policy.json",
+      "script_ref": "scripts/session_liveness_guard.py",
+      "manual_review_required_for_close": true,
+      "apply_requires_allow_session_ids": true
+    },
+    "status_model": [
+      "active",
+      "paused",
+      "suspenso",
+      "handoff_pendente",
+      "completed",
+      "failed",
+      "archived",
+      "stale",
+      "closed"
+    ]
   },
   "agents": {
     "Maestro": {
       "role": "Orquestrador Principal",
-      "responsibilities": ["coordenar_agents", "gerenciar_contexto", "decidir_estrategias"],
+      "responsibilities": [
+        "coordenar_agents",
+        "gerenciar_contexto",
+        "decidir_estrategias"
+      ],
       "priority": 1
     },
     "Dev": {
       "role": "Desenvolvedor Full-Stack",
-      "responsibilities": ["escrever_codigo", "refatorar", "implementar_features"],
+      "responsibilities": [
+        "escrever_codigo",
+        "refatorar",
+        "implementar_features"
+      ],
       "priority": 2
     },
     "Deploy": {
       "role": "Especialista em Deploy",
-      "responsibilities": ["ci_cd", "containers", "servidores", "automacao"],
+      "responsibilities": [
+        "ci_cd",
+        "containers",
+        "servidores",
+        "automacao"
+      ],
       "priority": 3
     },
     "QA": {
       "role": "Controle de Qualidade",
-      "responsibilities": ["testes_automatizados", "revisao_codigo", "validacao"],
+      "responsibilities": [
+        "testes_automatizados",
+        "revisao_codigo",
+        "validacao"
+      ],
       "priority": 4
     },
     "Security": {
       "role": "Seguranca",
-      "responsibilities": ["analise_vulnerabilidades", "hardening"],
+      "responsibilities": [
+        "analise_vulnerabilidades",
+        "hardening"
+      ],
       "priority": 5
     },
     "Docs": {
       "role": "Documentacao",
-      "responsibilities": ["gerar_documentacao", "readmes", "changelogs"],
+      "responsibilities": [
+        "gerar_documentacao",
+        "readmes",
+        "changelogs"
+      ],
       "priority": 6
     },
     "Status": {
       "role": "Monitoramento",
-      "responsibilities": ["monitorar_sistemas", "monitorar_agentes", "connectome"],
+      "responsibilities": [
+        "monitorar_sistemas",
+        "monitorar_agentes",
+        "connectome"
+      ],
       "priority": 7
     }
   },
@@ -89,19 +153,30 @@
   "integrations": {
     "github": {
       "enabled": true,
-      "features": ["repo", "ci_cd_actions", "projects"]
+      "features": [
+        "repo",
+        "ci_cd_actions",
+        "projects"
+      ]
     },
     "portainer": {
       "enabled": true,
-      "features": ["container_orchestration"]
+      "features": [
+        "container_orchestration"
+      ]
     },
     "n8n": {
       "enabled": true,
-      "features": ["workflow_automation"]
+      "features": [
+        "workflow_automation"
+      ]
     },
     "whatsapp_api": {
       "enabled": true,
-      "features": ["communication", "notifications"]
+      "features": [
+        "communication",
+        "notifications"
+      ]
     },
     "deploy_targets": {
       "render": true,
